@@ -20,8 +20,9 @@ body {
     text-align: center;
     align-items: center;
     gap: 20px;
-    max-width: 500px;
-    margin: 40px;
+    max-width: 90%; /* Adjusted for mobile */
+    margin: 40px auto; /* Centered with auto margins */
+    padding-bottom: 80px; /* Added padding to prevent overlap with buttons */
 }
 
 .container .tenor-gif-embed {
@@ -31,6 +32,8 @@ body {
 .container .btn {
     display: flex;
     gap: 25px;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center; /* Center buttons */
 }
 
 .btn a {
@@ -43,29 +46,46 @@ body {
 }
 
 /* Styles for the back button positioning */
-.back-btn { /* Added a class for easier targeting */
-    position: absolute;
-    bottom: 20px; /* Adjust as needed */
-    right: 20px; /* Adjust as needed */
+.back-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
 }
 
-.back-btn a { /* Style the link within the back-btn div */
-    background: #fff; /* Keep the original styling */
-    padding: 10px 25px; /* Keep the original styling */
-    border-radius: 8px; /* Keep the original styling */
-    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3); /* Keep the original styling */
+.back-btn a {
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
 }
 
 /* Styles for the home button positioning */
 .home-btn {
-    position: absolute;
-    bottom: 20px; /* Align with back button vertically */
-    left: 20px;  /* Position on the left */
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
 }
 
-.home-btn a { /* Style the link within the home-btn div */
-    background: #fff; /* Keep the original styling */
-    padding: 10px 25px; /* Keep the original styling */
-    border-radius: 8px; /* Keep the original styling */
-    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3); /* Keep the original styling */
+.home-btn a {
+    background: #fff;
+    padding: 10px 25px;
+    border-radius: 8px;
+    box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%; /* Full width on small screens */
+        margin: 20px; /* Smaller margin */
+    }
+
+    .btn a {
+        padding: 8px 20px; /* Smaller padding for buttons */
+    }
+
+    .back-btn a,
+    .home-btn a {
+        padding: 8px 20px; /* Smaller padding for fixed buttons */
+    }
 }
